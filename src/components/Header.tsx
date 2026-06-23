@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { navigation } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -46,7 +45,6 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <ThemeToggle />
             <button
               onClick={() => setOpen(!open)}
               className="lg:hidden p-2 text-gray-300 hover:text-white"

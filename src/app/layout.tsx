@@ -3,7 +3,6 @@ import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "next-themes";
 import Chatbot from "@/components/Chatbot";
 import { siteConfig } from "@/lib/data";
 
@@ -52,17 +51,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col bg-dark font-sans text-white antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          themes={["dark", "light"]}
-        >
-          <Header />
-          <main className="flex-1 pt-16 sm:pt-20">{children}</main>
-          <Footer />
-          <Chatbot />
-        </ThemeProvider>
+        <Header />
+        <main className="flex-1 pt-16 sm:pt-20">{children}</main>
+        <Footer />
+        <Chatbot />
       </body>
     </html>
   );
